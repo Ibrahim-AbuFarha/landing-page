@@ -1,0 +1,295 @@
+:root {
+  --primary-color: #8945ec;
+  --secondary-color: #5e2479;
+  --header-color: #73509f;
+  --highlight-color: #ffbe41;
+  --background-color: #fafafa;
+}
+
+body {
+  font-family: sans-serif;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 120rem;
+  margin: auto;
+}
+
+header {
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 50%,
+    rgba(255, 68, 26, 0.95) 100%
+  );
+  padding: 1.6rem 0;
+}
+
+.nav-list {
+  gap: 5.6rem;
+  flex: 1;
+  color: white;
+  font-size: 1.8rem;
+}
+.nav-list > li a:hover {
+  color: var(--highlight-color);
+}
+
+.nav-btn {
+  background: var(--highlight-color);
+  color: var(--secondary-color);
+  font-weight: bold;
+  padding: 1rem 1.6rem;
+  max-width: 16rem;
+  border-radius: 1.6rem;
+  border: 0.32rem solid #d3a09b;
+  cursor: pointer;
+  font-size: large;
+}
+button:hover {
+  color: white;
+}
+
+.header-menu {
+  font-size: 5rem;
+  color: white;
+  opacity: 0;
+}
+/*header end*/
+.disabled {
+  opacity: 0.5;
+}
+
+/*sideBar*/
+.sidebar {
+  display: none;
+}
+.sidebar-active {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(89deg, #ffd66b 0%, var(--highlight-color) 100%);
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-link {
+  padding: 10px;
+
+  font-size: 45px;
+  text-align: center;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.slide-right {
+  animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+/* Footer start */
+
+.footer-container {
+  display: flex;
+  padding: 4.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9rem;
+}
+.footer-boxes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9rem;
+}
+.allRight {
+  display: flex;
+  justify-content: space-between;
+  color: var(--header-color);
+  width: 100%;
+  font-size: 1.8rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.privacy {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-textbox {
+  display: flex;
+  flex-direction: column;
+  color: var(--header-color);
+  gap: 1.3rem;
+  height: 9.6rem;
+  color: var(--header-color);
+  font-size: 1.6rem;
+  margin-bottom: 6%;
+}
+.footer-textbox h3 {
+  color: var(--header-color);
+  font-size: 2rem;
+}
+
+.footer-logotext {
+  color: var(--header-color);
+  line-height: 150%;
+  width: 20%;
+  font-size: 2rem;
+}
+
+.footer-logotext p {
+  padding-left: 4.5rem;
+  width: 100%;
+}
+.footer-logotext img {
+  height: 5rem;
+}
+
+/**/
+
+/* Our Best Programs Section Fade-In Animation */
+
+/*  */
+
+.hidden {
+  opacity: 0 !important;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+.show {
+  opacity: 1 !important;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+/* Scroll-to-top arrow styles */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+}
+
+.scroll-to-top a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 24px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+.scroll-to-top a:hover {
+  color: var(--highlight-color);
+}
+.hide {
+  opacity: 0;
+}
+
+/**/
+/* Footer end */
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+/*media*/
+@media (width<768px) {
+  html {
+    font-size: 50%;
+  }
+  .hero-title {
+    font-size: 5rem;
+  }
+  .nav-list {
+    display: none;
+  }
+  .nav-btn {
+    display: none;
+  }
+
+  .header-container {
+    justify-content: space-between;
+  }
+  .footer-logotext {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .footer-textbox {
+    display: none;
+  }
+  .allRight {
+    justify-content: center;
+    gap: 3rem;
+  }
+  .header-menu {
+    opacity: 1;
+    padding-right: 2rem;
+    z-index: 6;
+  }
+}
+
+@media (767px<width<1080px) {
+  .footer-logotext {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+  .nav-list {
+    gap: 2rem;
+  }
+
+  .footer-textbox {
+    display: none;
+  }
+}
